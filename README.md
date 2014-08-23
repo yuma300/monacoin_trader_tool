@@ -1,39 +1,30 @@
-# MonacoinClient
+# MonacoinTraderTool
 
-client for monacoin.
+MonacoinTraderTool provide simple interface to access Monacoin trade place API.
 
 It includes:
 
-- Monacoin RPC
+- Ticker on etwings, monatr and monax
 
 Todo:
 
-- Other userfull monacoin tools, ideas?
+- please tell me
 
 ## Installation
 
-    $ gem install monacoin_client
+    $ gem install monacoin_trader_tool
 
 or
 
     $ rake build
-    $ gem install pkg/monacoin_client-X.X.X.gem
+    $ gem install pkg/monacoin_trader_tool-X.X.X.gem
 
 ## Usage
-
-Example for the RPC:
-
-```
-require 'monacoin_client'
-
-lt = MonacoinRPC.new('http://user:password@127.0.0.1:9332')
-p lt.getbalance # this outputs the balance
-```
 
 Example for Ticker from etwings
 
 ```
-require 'monacoin_client'
+require 'monacoin_trader_tool'
 
 p MonacoinTickers::Etwings.ticker
 ```
@@ -41,10 +32,20 @@ p MonacoinTickers::Etwings.ticker
 Example for Ticker from monatr
 
 ```
-require 'monacoin_client'
+require 'monacoin_trader_tool'
 
 p MonacoinTickers::Monatr.ticker("BTC_MONA")
-`
+```
+
+Example for Ticker from monax
+
+```
+require 'monacoin_trader_tool'
+
+p MonacoinTickers::Monax.ticker
+p MonacoinTickers::Monax.history
+```
+
 ## Contributing
 
 1. Fork it
